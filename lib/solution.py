@@ -4,18 +4,20 @@ def solution(A, D):
     total_income = 10
     total_fees = defaultdict(int)
     
+    # loop through the transaction to calculate the income and fes
     for amount, date in zip(A, D):
         year, month, _ = map(int, date.split('-'))
         total_income += amount
-        
+    # checks if transaction is a card payement     
         if amount < 0:
             total_fees[(year, month)] += abs(amount)
     
     total_fees_amount = 0
+    # calculates the total to be deducted every month
     for month, fee in total_fees.items():
         if fee < 10:
             total_fees_amount += 5
-    
+    # Returns the final balance after deducting fees from income
     return total_income - total_fees_amount
 
 # Test cases
