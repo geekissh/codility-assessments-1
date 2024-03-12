@@ -1,8 +1,7 @@
-from collections import defaultdict
-
 def solution(A, D):
     total_income = 10
-    total_fees = defaultdict(int)
+    total_fees = {}  # Store total fees for each month
+
     
     # loop through the transaction to calculate the income and fes
     for amount, date in zip(A, D):
