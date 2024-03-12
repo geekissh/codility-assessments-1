@@ -1,6 +1,6 @@
 def solution(A, D):
     total_income = 10
-    total_fees = {}  # Store total fees for each month
+    total_fees = {0}  # Store total fees for each month
 
     
     # loop through the transaction to calculate the income and fes
